@@ -57,7 +57,6 @@
 
 
 # 🚨 Don't change the code below 👇
-from re import U
 
 
 print("Welcome to the Love Calculator!")
