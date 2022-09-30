@@ -100,4 +100,3 @@ Solution with choice() function:
 
 # winner = random.choice(names)
 # print(f"{winner.capitalize()} is going to pay the bill today!")
-
