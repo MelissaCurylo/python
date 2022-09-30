@@ -36,7 +36,7 @@ while try_again == "yes":
     names = names_string.split(",") 
 
     if names_string.strip() and names != '':
-        randomize_list = random.randint(0, len(names) -1)
+        randomize_list = random.randint(0, len(names) -1) # minus 1 as index positions begin at zero and in order to not hit out of bounds we need to subtract one
         winner = names[randomize_list]
         print(f"{winner.capitalize()} is going to pay the bill today!")
 
@@ -57,7 +57,7 @@ names = names_string.split(",")
 # 🚨 Don't change the code above 👆
 # Write your code below this line 👇
 '''
-# My first solution and coded by rules of assignment 
+# Below is my first solution and coded by rules of assignment 
 # Adjusted provided code via split() above as if user input does not include a space after comma then the string is not separated... 
 # Removed space
 '''
@@ -65,3 +65,39 @@ import random
 random_pick = random.randint(0, len(names) -1)
 print(names[random_pick])
 '''
+
+#---------------------------------------------------------------------------------------------------------------------------------------
+
+"""
+Another way to write out game:
+
+
+# Split string method
+names_string = input("Give me everybody's names, separated by a comma. ")
+names = names_string.split(",") 
+# 🚨 Don't change the code above 👆
+# Write your code below this line 👇
+
+names_submitted = len(names)
+
+random_choice = random.randint(0, names_submitted - 1 ) 
+print(random_choice)
+
+"""
+
+#---------------------------------------------------------------------------------------------------------------------------------------
+
+"""
+Solution with choice() function:
+"""
+# import random
+
+# # Split string method
+# names_string = input("Give me everybody's names, separated by a comma. ")
+# names = names_string.split(",") 
+# # 🚨 Don't change the code above 👆
+# # Write your code below this line 👇
+
+# winner = random.choice(names)
+# print(f"{winner.capitalize()} is going to pay the bill today!")
+
