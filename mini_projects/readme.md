@@ -1,4 +1,6 @@
-## Demos ##   <!-- <img src="" width="600"> -->
+## Mini Project Demos ##   
+
+<!-- <img src="" width="600"> -->
 
 ### Email Slicer <sub>*_<a href="https://github.com/MelissaCurylo/python/tree/master/mini_projects/email_slicer"> Link to code </a>_*</sub> ###
 ## <sub> Learning List Manipulation </sub>
