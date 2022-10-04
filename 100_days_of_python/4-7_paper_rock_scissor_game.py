@@ -59,14 +59,15 @@ play_again = "yes"
 while play_again == "yes":
 
     player_one = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
-    computer = random.randint(0,2)
 
     if player_one < 0 or player_one > 2:
         print("Invalid entry, exiting program")
         exit()
     
-    print(f"Your selection: {selection[player_one]} ")
-    print(f"Computer selection: {selection[computer]}")
+    print(f"Your selection: {selection[player_one]}\n")
+
+    computer = random.randint(0,2)
+    print(f"Computer selection: {selection[computer]}\n")
 
     time.sleep(1)
 
@@ -74,6 +75,6 @@ while play_again == "yes":
     print(win[player_one - computer])
 
     time.sleep(1)
-    play_again = input("Would you like to play again? Type yes or no: ")
+    play_again = input("Would you like to play again? Type yes or no: \n")
     
 print("Until next time!")
