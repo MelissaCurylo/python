@@ -44,12 +44,12 @@
             - To note the pattern of the j for loop shows it is dependent on the i for loop.
                 - Meaning that each i loop requires j to run it's full 9 operations until the ability to move back to the i loop and run it's next number.
 """
-# def print_items(n):
-#     for i in range(n):
-#         for j in range(n):
-#             print(i,j)
+def print_items(n):
+    for i in range(n):
+        for j in range(n):
+            print(i,j)
 
-# print_items(10)  
+print_items(10)  
 
 
 """ 
@@ -61,13 +61,13 @@
     
 """
 
-# def print_items(n):
-#     for i in range(n):
-#         for j in range(n):
-#             for k in range(n):
-#                 print(i,j, k)
+def print_items(n):
+    for i in range(n):
+        for j in range(n):
+            for k in range(n):
+                print(i,j, k)
 
-# print_items(10)   
+print_items(10)   
 
 
 
@@ -89,15 +89,15 @@ Time complexity = O(n^2)
 
 """
 
-# def print_items(n):
-#     for i in range(n):
-#         for j in range(n):
-#             print(i,j)
+def print_items(n):
+    for i in range(n):
+        for j in range(n):
+            print(i,j)
     
-#     for k in range(n):
-#         print(k)
+    for k in range(n):
+        print(k)
 
-# print_items(10)   
+print_items(10)   
 
 
 
