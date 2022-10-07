@@ -15,15 +15,17 @@ blp = Blueprint("stores", __name__, description="Operations on stores.")
 @blp.route("/store/<string:store_id>")
 class Store(MethodView):
 
-    @blp.response(200, StoreSchema)
-    def get(self, store_id):
-        store = StoreModel.get_or_404(store_id)
-        return store
+    @blp.response(200, StoreSchema(many=True))
+    def get(self):
+        return StoreModel.query.all()
 
 
     def delete(self, store_id):
         store = StoreModel.query.get_or_404(store_id)
-        raise NotImplementedError("Deleting a store is not implemented.")
+        db.session.delete(store)
+        db.session.commit()
+        return {"message": "Store deleted."}, 200
+        
 
 
 
