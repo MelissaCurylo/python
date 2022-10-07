@@ -1,12 +1,9 @@
-from flask import request
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
-
 from sqlalchemy.exc import SQLAlchemyError
 from db import db
 from models import ItemModel
 from schemas import ItemSchema, ItemUpdateSchema
-
 
 
 blp = Blueprint("Items", "items", description="Operations on items.")
@@ -44,8 +41,7 @@ class ItemList(MethodView):
 
     @blp.response(200, ItemSchema(many=True))
     def get(self):
-        pass
-        # return items.values() # returns a list of items not object of items **************************************CORRECT THIS
+      return items.values() # returns a list of items not object of items **************************************CORRECT THIS
 
 
     @blp.arguments(ItemSchema)
@@ -59,3 +55,5 @@ class ItemList(MethodView):
             
         except SQLAlchemyError:
             abort(500, message="An error occurred while inserting the item.")
+        
+        return item
