@@ -24,47 +24,47 @@ Hint:    Remember to use the round() function to round the average height before
 """
 
 # 🚨 Don't change the code below 👇
-
-from operator import index
-
-
 student_heights = input("Input a list of student heights ").split()
 for n in range(0, len(student_heights)):
     student_heights[n] = int(student_heights[n])
-
 # 🚨 Don't change the code above 👆
+
+
 #Write your code below this row 👇
 
-summed_heights = 0
+# No comma when entering input
 
+summed_heights = 0
 for each_height in student_heights:
     summed_heights += each_height
-print(summed_heights)
+# print(summed_heights)
 
 
 total_students = 0
-
 for each_student in student_heights:
     total_students += 1
-print(total_students)
+# print(total_students)
+
+average_height = round(summed_heights / total_students)
+print(average_height)
 
 #===========================================================================================
 # solution without sum() 
 
-print(len(student_heights))
+# print(len(student_heights))
 
-for each_height in student_heights:
-    index = 0
-    index += n
-    average = round(len(student_heights) / index)
-    print(average)
+# for each_height in student_heights:
+#     index = 0
+#     index += n
+#     average = round(len(student_heights) / index)
+#     print(average)
     # average = student_heights[0: len(student_heights)]
 
 #===========================================================================================
 
 # solution with sum(0 and len(0))
 
-total_height = sum(student_heights)
-number_of_students = len(student_heights)
-average_height = round(total_height / number_of_students)
-print(average_height)
+# total_height = sum(student_heights)
+# number_of_students = len(student_heights)
+# average_height = round(total_height / number_of_students)
+# print(average_height)
