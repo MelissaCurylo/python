@@ -57,6 +57,10 @@ print(f"Hard level password result: {password}\n")
 
 print("**************************************")
 
+
+
+
+
 # Another Solution with built-in methods:
 
 # password = ''.join(random.choices(letters, k = nr_letters) + random.choices(numbers, k = nr_numbers) + random.choices(symbols, k = nr_symbols))
