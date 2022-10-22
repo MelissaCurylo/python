@@ -21,4 +21,3 @@ rangeTotal = 0
 for accumulator in range(1,101):
     rangeTotal += accumulator
 print(rangeTotal)
-
