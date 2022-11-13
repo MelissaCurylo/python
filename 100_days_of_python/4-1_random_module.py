@@ -28,3 +28,9 @@ print(random_float)
 # Setting a variable to random
 love_score = random.randint(1, 100)
 print(f"Your love score is {love_score}")
+
+
+# Selecting a random word from list
+word_bank = ["sunshine", "picnic", "birds", "blanket", "books"]
+word = random.choice(word_bank)
+print(word)
