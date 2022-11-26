@@ -1,27 +1,5 @@
-"""
-1. Create a random word generator.
-    1a. Create visual blanks for random word.
-2. Prompt user input to guess a letter for random word.
-3. Conditional: Guessed letter in word?
-    3a. Yes: Replace blanks with letters. 
-        3a1. Conditional: All blanks filled?
-            Yes: game over.
-            No: loop for user input.
-
-    3b. No: Lose body part.
-        3b1. Conditional: Does user still have lives?
-            Yes: loop for user input.
-            No: game over.
-"""
-
 import random
-
-word_bank = ["able", "agility", "abroad", "blanket", "birds", "balloon", "passage", "wanderlust", "wayfaring", "voyage", "voyaging", "trekking", "expedition", "home", "London", "flat", "engineer"]
-
-# random generator from word_bank
-hidden_word = random.choice(word_bank).lower()
-
-lives = 6
+import time
 
 stages = ['''
   +---+
@@ -83,15 +61,28 @@ stages = ['''
 
 
 # ******* using while testing code // comment out print later******
-print(f"\n-----------------------\n Hidden word: {hidden_word} \n-----------------------\n ***Comment this line ^^ after testing is complete***\n") 
+# print(f"\n-----------------------\n Hidden word: {hidden_word} \n-----------------------\n ***Comment this line ^^ after testing is complete***\n") 
+
+logo = ''' 
+ _                                             
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/    '''
+print(logo)
+time.sleep(1)
 
 print(f"\n--<3----------------------------------\n  Welcome to Hangman \n The Game of Guessing Words \n-------------------------------<3-----\n  ") 
+time.sleep(1)
 
-
-
-# def hidden_word():
-display = []
+word_bank = ["able", "agility", "abroad", "blanket", "birds", "balloon", "passage", "wanderlust", "wayfaring", "voyage", "voyaging", "trekking", "expedition", "home", "London", "flat", "engineer"]
+hidden_word = random.choice(word_bank).lower()
 word_length = len(hidden_word)
+display = []
+lives = 6
 
 
 for _ in range(word_length):
@@ -108,13 +99,16 @@ while "_" in display and lives > 0:
 
     if user_guess not in hidden_word:
         lives -= 1
+        time.sleep(1)
         print(f"{stages[lives]} \n\n Letter '{user_guess}' is not in the word.\n Lose a life: {lives}.\n\n")
 
     print(display)
 
 if "_" not in display and lives > 0:
+    time.sleep(1)
     print(f"\nYou Win! The word is: {hidden_word}.\n")
 elif lives == 0:
+    time.sleep(1)
     print(f"You lose, no lives left. \n The word was: {hidden_word}.\n")
 
 
