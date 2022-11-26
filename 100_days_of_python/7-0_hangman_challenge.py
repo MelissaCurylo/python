@@ -93,6 +93,7 @@ print(f"\n--<3----------------------------------\n  Welcome to Hangman \n The Ga
 display = []
 word_length = len(hidden_word)
 
+
 for _ in range(word_length):
     display += "_"
 print(f"\n{display}")
@@ -107,16 +108,18 @@ while "_" in display and lives > 0:
 
     if user_guess not in hidden_word:
         lives -= 1
-        print(f"Letter '{user_guess}' is not in the word.\n Lose a life: {lives}.\n\n")
-
-        if lives < 0:
-            print(f"You lose, no lives left. \n The word was: {hidden_word}.")
+        print(f"{stages[lives]} \n\n Letter '{user_guess}' is not in the word.\n Lose a life: {lives}.\n\n")
 
     print(display)
 
+if "_" not in display and lives > 0:
+    print(f"\nYou Win! The word is: {hidden_word}.\n")
+elif lives == 0:
+    print(f"You lose, no lives left. \n The word was: {hidden_word}.\n")
 
 
-print(f"You Win! The word is: {hidden_word}.\n")
+
+
 
 
 
@@ -149,4 +152,3 @@ def game_lost():
         print(f"You lose, no lives left. \n The word was: {hidden_word}.")
 
 """
-
