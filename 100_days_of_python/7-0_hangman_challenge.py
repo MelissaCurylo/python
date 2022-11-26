@@ -21,63 +21,132 @@ word_bank = ["able", "agility", "abroad", "blanket", "birds", "balloon", "passag
 # random generator from word_bank
 hidden_word = random.choice(word_bank).lower()
 
+lives = 6
+
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+    +---+
+    |   |
+    O   |
+   /|   |
+        |
+        |
+=========''', '''
+    +---+
+    |   |
+    O   |
+    |   |
+        |
+        |
+=========
+''', '''
+    +---+
+    |   |
+    O   |
+        |
+        |
+        |
+=========
+''', '''
+    +---+
+    |   |
+    |
+    |
+    |
+    |
+=========
+''']
+
+
+
 # ******* using while testing code // comment out print later******
-print(hidden_word) 
+print(f"\n-----------------------\n Hidden word: {hidden_word} \n-----------------------\n ***Comment this line ^^ after testing is complete***\n") 
+
+print(f"\n--<3----------------------------------\n  Welcome to Hangman \n The Game of Guessing Words \n-------------------------------<3-----\n  ") 
 
 
-# replacing hidden_word letters with blanks
-# display = ["_"] * len(hidden_word)
-# print(display)
 
-## Other ways to implement replacing letters with "_"
-# display = []
-# for letter in hidden_word:
-#     display += "_"
-# print(display)
-
+# def hidden_word():
 display = []
 word_length = len(hidden_word)
 
 for _ in range(word_length):
     display += "_"
-print(display)
+print(f"\n{display}")
+
+
+while "_" in display and lives > 0:
+    user_guess = input(f"\nGuess a letter: ").lower()
+
+    for position, letter in enumerate(hidden_word):
+        if letter == user_guess:
+            display[position] = user_guess
+
+    if user_guess not in hidden_word:
+        lives -= 1
+        print(f"Letter '{user_guess}' is not in the word.\n Lose a life: {lives}.\n\n")
+
+        if lives < 0:
+            print(f"You lose, no lives left. \n The word was: {hidden_word}.")
+
+    print(display)
 
 
 
-# prompting user to guess a letter
-user_guess = input("Guess a letter: \n").lower()
-
-# verifing user letter input to hidden_word
-for position in range(word_length):
-
-    letter = hidden_word[position] # letter == the index positions value, letter in this case
-    if letter == user_guess:
-        display[position] = letter
-print(f"Matches thus far: {display}")
-
-# TODO 3a: If users letter guess matches replace blank space with letter
+print(f"You Win! The word is: {hidden_word}.\n")
 
 
 
+# -------------------------------------------------------------------------------------------------------------
+# Code blocks not used:
+
+"""
+**** alternate letter_guessed_valid() method ****
+def letter_guessed_valid:():
+    for position in range(word_length):
+        letter = hidden_word[position] # letter == the index positions value, letter in this case
+        if letter == user_guess:
+            display[position] = letter
 
 
+def letter_guessed_valid():
+    for position, letter in enumerate(hidden_word):
+        if letter == user_guess:
+            display[position] = user_guess
 
 
+def letter_guessed_invalid():
+    if user_guess not in hidden_word:
+        lives -= 1
+    print(f"Lose a life, {user_guess} is not in the word.")
 
-# # TODO 1: Create random generator from word_bank
-# hidden_word = random.choice(word_bank).lower()
-# print(hidden_word)
 
-# # TODO 2: Prompt user to guess a letter 
-# user_guess = input("Guess a letter: \n").lower()
-    
+def game_lost():
+    if lives < 0:
+        print(f"You lose, no lives left. \n The word was: {hidden_word}.")
 
-# # TODO 3: Verify user input
-# for letter in hidden_word:
-    
-#     if user_guess in hidden_word:
-#         print(f"Matched letter: {user_guess}")
-#     else:
-#         print(f"{user_guess} is not a match")
-
+"""
 
