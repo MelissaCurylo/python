@@ -1,3 +1,5 @@
+""" Challenge: Hangman Game """
+
 import random
 import time
 import hangman_logo_module
@@ -18,7 +20,7 @@ display = []
 lives = 6
 
 # ******* using while testing code // comment out print later******
-print(f"\n-----------------------\n Hidden word: {hidden_word} \n-----------------------\n ***Comment this line ^^ after testing is complete***\n") 
+# print(f"\n-----------------------\n Hidden word: {hidden_word} \n-----------------------\n ***Comment this line ^^ after testing is complete***\n") 
 
 
 for _ in range(word_length):
