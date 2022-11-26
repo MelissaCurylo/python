@@ -2,12 +2,12 @@
 
 import random
 import time
-import hangman_logo_module
+from hangman_logo_module import logo
 from hangman_stages_module import stages
 from hangman_word_bank import word_bank
 
 
-hangman_logo_module
+print(logo)
 
 print(f"\n--<3----------------------------------\n  Welcome to Hangman \n The Game of Guessing Words \n-------------------------------<3-----\n  ") 
 time.sleep(1)
